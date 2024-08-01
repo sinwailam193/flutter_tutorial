@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:flutter_tutorial/components/custom_button.dart";
 import "package:flutter_tutorial/components/custom_textfield.dart";
+import "package:flutter_tutorial/pages/home_page.dart";
 
 class LoginPage extends StatefulWidget {
   final void Function()? onTap;
@@ -14,6 +15,18 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  void signIn() {
+    // TODO: fill out authentication
+
+    // navigate to home page
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const HomePage(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +43,7 @@ class _LoginPageState extends State<LoginPage> {
               color: Theme.of(context).colorScheme.inversePrimary,
             ),
             const SizedBox(height: 25),
+
             // message, app slogan
             Text(
               "Food Delivery App",
@@ -39,6 +53,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(height: 25),
+
             // email textfield
             CustomTextfield(
               controller: emailController,
@@ -46,6 +61,7 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: false,
             ),
             const SizedBox(height: 10),
+
             // password textfield
             CustomTextfield(
               controller: passwordController,
@@ -53,9 +69,11 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
             ),
             const SizedBox(height: 25),
+
             // sign in buttton
-            CustomButton(text: "Sign in", onTap: () {}),
+            CustomButton(text: "Sign in", onTap: signIn),
             const SizedBox(height: 25),
+
             // not a member? register now
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

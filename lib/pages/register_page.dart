@@ -35,6 +35,7 @@ class _RegisterPageState extends State<RegisterPage> {
               color: Theme.of(context).colorScheme.inversePrimary,
             ),
             const SizedBox(height: 25),
+
             // message, app slogan
             Text(
               "Let's create an account for you",
@@ -44,6 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
             ),
             const SizedBox(height: 25),
+
             // email textfield
             CustomTextfield(
               controller: emailController,
@@ -51,6 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
               obscureText: false,
             ),
             const SizedBox(height: 10),
+
             // password textfield
             CustomTextfield(
               controller: passwordController,
@@ -58,6 +61,7 @@ class _RegisterPageState extends State<RegisterPage> {
               obscureText: true,
             ),
             const SizedBox(height: 10),
+
             // confirm password textfield
             CustomTextfield(
               controller: confirmPasswordController,
@@ -65,9 +69,11 @@ class _RegisterPageState extends State<RegisterPage> {
               obscureText: true,
             ),
             const SizedBox(height: 25),
+
             // sign in buttton
             CustomButton(text: "Sign up", onTap: () {}),
             const SizedBox(height: 25),
+
             // already have an account? Login here
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
